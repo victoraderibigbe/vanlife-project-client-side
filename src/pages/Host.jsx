@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Host = () => {
   const [hostVans, setHostVans] = useState([]);
-  let url = "http://localhost:3200/api/host/vans";
+  let url = "https://vanlife-api-82gp.onrender.com/api/host/vans";
 
   useEffect(() => {
     axios

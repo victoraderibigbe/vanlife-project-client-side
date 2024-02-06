@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 const DisplayVan = () => {
   const [data, setData] = useState([]);
   let { id } = useParams();
-  let URL = `http://localhost:3200/api/vans/${id}`;
+  let URL = `https://vanlife-api-82gp.onrender.com/api/vans/${id}`;
 
   useEffect(() => {
     axios

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const AllVans = () => {
   const [vans, setVans] = useState([]);
-  let URL = "http://localhost:3200/api/vans";
+  let URL = "https://vanlife-api-82gp.onrender.com/api/vans"
   
   useEffect(() => {
     axios.get(URL)

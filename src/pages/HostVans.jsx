@@ -28,6 +28,7 @@ const HostVans = () => {
               url={van.imageUrl}
               name={van.name}
               price={van.price}
+              route={`/host/vans/${van.id}`}
             />
           </div>
         ))}

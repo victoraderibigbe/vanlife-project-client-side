@@ -5,6 +5,7 @@ import "./App.css";
 import MainLayout from "./components/MainLayout";
 import HostLayout from "./components/HostLayout";
 import IntroPageLayout from "./components/IntroPageLayout";
+import HostSubLayout from "./components/HostSubLayout";
 
 // Main pages
 import Home from "./pages/Home";
@@ -20,11 +21,11 @@ import SignIn from "./pages/SignIn";
 // HostVans pages
 import Host from "./pages/Host";
 import HostVans from "./pages/HostVans";
-import HostReviews from "./pages/HostReviews"
-import HostIncome from "./pages/HostIncome"
-import DisplayHostVan from "./pages/DisplayHostVan"
-import HostVanPricing from "./pages/HostVanPricing"
-import HostVanPhotos from "./pages/HostVanPhotos"
+import HostReviews from "./pages/HostReviews";
+import HostIncome from "./pages/HostIncome";
+import DisplayHostVan from "./pages/DisplayHostVan";
+import HostVanPricing from "./pages/HostVanPricing";
+import HostVanPhotos from "./pages/HostVanPhotos";
 
 // Toast
 import { ToastContainer } from "react-toastify";
@@ -54,9 +55,11 @@ function App() {
           <Route path="/host/vans" element={<HostVans />} />
           <Route path="/host/reviews" element={<HostReviews />} />
           <Route path="/host/income" element={<HostIncome />} />
-          <Route path="/host/vans/:hostId" element={<DisplayHostVan />} />
-          <Route path="/host/vans/:hostId/pricing" element={<HostVanPricing />} />
-          <Route path="/host/vans/:hostId/photos" element={<HostVanPhotos />} />
+          <Route element={<HostSubLayout />}>
+            <Route path="/host/vans/:id" element={<DisplayHostVan />} />
+            <Route path="/host/vans/:id/pricing" element={<HostVanPricing />} />
+            <Route path="/host/vans/:id/photos" element={<HostVanPhotos />} />
+          </Route>
         </Route>
 
         {/* Error page route */}

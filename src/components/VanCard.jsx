@@ -14,24 +14,6 @@ const VanCard = ({ cardImg, altText, cardTitle, price, type, route }) => {
 
   return (
     <>
-      {/* <div>
-        <Card className="max-w-sm p-0" imgAlt={altText} imgSrc={cardImg}>
-          <div className="flex">
-            <div>
-              <h4 className="mr-1 card-title">{cardTitle}</h4>
-            </div>
-            <div>
-              <h4 className="item-price">${price}/day</h4>
-            </div>
-          </div>
-
-          <button
-            className={`py-3 text-white rounded-lg font-semibold text-xl ${typeColor()}`}
-          >
-            <Link to={route}>{type}</Link>
-          </button>
-        </Card>
-      </div> */}
 
       <div>
         <Link to={route}>

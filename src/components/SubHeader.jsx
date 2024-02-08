@@ -11,8 +11,8 @@ const SubHeader = ({ navlinks }) => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "text-black underline font-bold text-xl"
-                    : "text-xl text-gray-500"
+                    ? "text-black underline font-bold text-sm md:text-xl"
+                    : "text-sm md:text-xl text-gray-500"
                 }
                 to={navlink.path}
                 end

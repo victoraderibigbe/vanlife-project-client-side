@@ -31,25 +31,25 @@ const DisplayVan = () => {
     <>
       <div className="w-full p-5 mx-auto md:p-10 md:w-2/4">
         <div>
-          <Link to="/vans" className="text-xl font-medium underline">
+          <Link to="/vans" className="text-sm font-medium underline md:text-xl">
             Back to all vans
           </Link>
         </div>
         <div></div>
         <div className="my-5">
-          <img className="w-full" src={data.imageUrl} alt={data.name} />
+          <img className="w-full rounded" src={data.imageUrl} alt={data.name} />
         </div>
         <div>
           <div
-            className={`w-2/6 md:w-3/12 py-3 text-center text-white rounded-lg font-semibold text-xl ${typeColor()}`}
+            className={`w-2/6 md:w-3/12 py-3 text-center text-white rounded-lg font-semibold text-sm md:text-xl ${typeColor()}`}
           >
             {data.type}
           </div>
         </div>
-        <div className="my-5">
-          <h2>{data.name}</h2>
+        <div className="my-2 md:my-5">
+          <h3>{data.name}</h3>
         </div>
-        <div className="text-xl">
+        <div className="text-lg">
           <span className="font-bold">${data.price}</span>
           <span>/day</span>
         </div>
@@ -57,7 +57,7 @@ const DisplayVan = () => {
           <p>{data.description}</p>
         </div>
         <div>
-          <button className="w-full py-3 text-xl font-semibold text-white transition rounded-lg bg-amber-500 hover:bg-amber-600">
+          <button className="w-full py-3 text-lg font-semibold text-white transition rounded-lg md:text-xl bg-amber-500 hover:bg-amber-600">
             <Link to="/register">Rent this van</Link>
           </button>
         </div>

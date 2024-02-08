@@ -18,7 +18,7 @@ const HostVans = () => {
 
   return (
     <>
-      <div className="p-5 pb-48 bg-orange-50">
+      <div className="p-5 pb-40 bg-orange-50">
         <div className="p-5">
           <h3>Your listed vans</h3>
         </div>

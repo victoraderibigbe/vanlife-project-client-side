@@ -14,7 +14,7 @@ const HostIncome = () => {
           <span className="ml-1 font-medium underline">30 days</span>
         </div>
         <div className="py-2">
-          <h1>$2,260</h1>
+          <h2>$2,260</h2>
         </div>
         <div>
           <Bar
@@ -49,7 +49,7 @@ const HostIncome = () => {
         </div>
         <div className="flex items-center justify-between p-4 my-3 bg-white rounded-lg">
           <div className="basis-3/4">
-            <h2>$720</h2>
+            <h3>$720</h3>
           </div>
           <div className="basis-1/4 text-end">
             <span>1/12/22</span>
@@ -57,7 +57,7 @@ const HostIncome = () => {
         </div>
         <div className="flex items-center justify-between p-4 my-3 bg-white rounded-lg">
           <div className="basis-3/4">
-            <h2>$560</h2>
+            <h3>$560</h3>
           </div>
           <div className="basis-1/4 text-end">
             <span>10/11/22</span>
@@ -65,7 +65,7 @@ const HostIncome = () => {
         </div>
         <div className="flex items-center justify-between p-4 my-3 bg-white rounded-lg">
           <div className="basis-3/4">
-            <h2>$980</h2>
+            <h3>$980</h3>
           </div>
           <div className="basis-1/4 text-end">
             <span>23/11/22</span>

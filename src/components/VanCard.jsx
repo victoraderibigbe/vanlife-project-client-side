@@ -1,33 +1,24 @@
 import { Card } from "flowbite-react";
 import { Link } from "react-router-dom";
 
-const VanCard = ({
-  cardImg,
-  altText,
-  cardTitle,
-  price,
-  btnTitle,
-  route,
-}) => {
+const VanCard = ({ cardImg, altText, cardTitle, price, type, route }) => {
   const typeColor = () => {
-    if (btnTitle.toLowerCase() === "simple") {
+    if (type.toLowerCase() === "simple") {
       return "bg-orange-500";
-    }
-    else if (btnTitle.toLowerCase() === "rugged") {
+    } else if (type.toLowerCase() === "rugged") {
       return "bg-green-500";
-    }
-    else if (btnTitle.toLowerCase() === "luxury") {
+    } else if (type.toLowerCase() === "luxury") {
       return "bg-black";
     }
   };
 
   return (
     <>
-      <div>
-        <Card className="max-w-sm" imgAlt={altText} imgSrc={cardImg}>
+      {/* <div>
+        <Card className="max-w-sm p-0" imgAlt={altText} imgSrc={cardImg}>
           <div className="flex">
             <div>
-              <h4 className="mr-2 card-title">{cardTitle}</h4>
+              <h4 className="mr-1 card-title">{cardTitle}</h4>
             </div>
             <div>
               <h4 className="item-price">${price}/day</h4>
@@ -37,9 +28,36 @@ const VanCard = ({
           <button
             className={`py-3 text-white rounded-lg font-semibold text-xl ${typeColor()}`}
           >
-            <Link to={route}>{btnTitle}</Link>
+            <Link to={route}>{type}</Link>
           </button>
         </Card>
+      </div> */}
+
+      <div>
+        <Link to={route}>
+          <div className="card-img">
+            <img className="rounded" src={cardImg} alt={altText} />
+          </div>
+
+          <div className="p-2 my-2 card-body">
+            <div className="flex">
+              <div>
+                <h4 className="mr-2 item-title">{cardTitle}</h4>
+              </div>
+              <div>
+                <h4 className="item-price">${price}/day</h4>
+              </div>
+            </div>
+
+            <div className="type">
+              <div
+                className={`p-2 w-2/4 text-center my-3 text-white rounded-lg font-semibold text-sm md:text-xl ${typeColor()}`}
+              >
+                {type}
+              </div>
+            </div>
+          </div>
+        </Link>
       </div>
     </>
   );

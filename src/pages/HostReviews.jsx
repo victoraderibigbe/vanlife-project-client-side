@@ -4,8 +4,8 @@ import { Progress } from "flowbite-react";
 const HostReviews = () => {
   return (
     <>
-      <div className="p-5">
-        <div className="flex items-center py-2">
+      <div className="px-5">
+        <div className="flex items-center pb-2">
           <div className="mr-5">
             <h3>Your reviews</h3>
           </div>
@@ -98,12 +98,12 @@ const HostReviews = () => {
               <StarIcon className="text-orange-400" />
               <StarIcon className="text-orange-400" />
             </div>
-            <div className="review-title">
-              <span className="mr-2 text-xl font-semibold">Elliot</span>
-              <span className="text-xl font-semibold text-gray-500 ">December 1, 2022</span>
+            <div className="text-lg review-title">
+              <span className="mr-2 font-semibold">Elliot</span>
+              <span className="font-semibold text-gray-500 ">December 1, 2022</span>
             </div>
             <div className="review-body">
-              <p className="text-lg">The beach bum is such as awesome van! Such as comfortable trip. We had it for 2 weeks and there was not a single issue. Super clean when we picked it up and the host is very comfortable and understanding. Highly recommend!</p>
+              <p className="text-sm">The beach bum is such as awesome van! Such as comfortable trip. We had it for 2 weeks and there was not a single issue. Super clean when we picked it up and the host is very comfortable and understanding. Highly recommend!</p>
             </div>
           </div>
           <div className="my-2 customer-review">
@@ -114,12 +114,12 @@ const HostReviews = () => {
               <StarIcon className="text-orange-400" />
               <StarIcon className="text-orange-400" />
             </div>
-            <div className="review-title">
-              <span className="mr-2 text-xl font-semibold">Elliot</span>
-              <span className="text-xl font-semibold text-gray-500 ">December 1, 2022</span>
+            <div className="text-lg review-title">
+              <span className="mr-2 font-semibold">Elliot</span>
+              <span className="font-semibold text-gray-500 ">December 1, 2022</span>
             </div>
             <div className="review-body">
-              <p className="text-lg">The beach bum is such as awesome van! Such as comfortable trip. We had it for 2 weeks and there was not a single issue. Super clean when we picked it up and the host is very comfortable and understanding. Highly recommend!</p>
+              <p className="text-sm">The beach bum is such as awesome van! Such as comfortable trip. We had it for 2 weeks and there was not a single issue. Super clean when we picked it up and the host is very comfortable and understanding. Highly recommend!</p>
             </div>
           </div>
           

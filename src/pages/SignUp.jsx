@@ -50,17 +50,17 @@ const SignUp = () => {
   });
 
   return (
-    <div className="w-full p-2 mx-auto my-10 md:w-2/5">
-      <div className="px-5 py-5 rounded-lg shadow-lg">
-        <h2>Sign up an account</h2>
+    <div className="w-full p-2 mx-auto my-5 md:w-2/5">
+      <div className="px-5 rounded-lg shadow-lg">
+        <h3 className="mb-2">Sign up an account</h3>
         <form action="" onSubmit={formik.handleSubmit}>
           <FloatingLabel
             variant="filled"
             label="First Name"
             className={
               formik.touched.firstname && formik.errors.firstname
-                ? "border-red-500 m-0 text-lg rounded-t-lg"
-                : "m-0 text-lg rounded-t-lg"
+                ? "border-red-500 m-0 md:text-lg rounded-t-lg"
+                : "m-0 md:text-lg rounded-t-lg"
             }
             name="firstname"
             value={formik.values.firstname}
@@ -75,8 +75,8 @@ const SignUp = () => {
             label="Last Name"
             className={
               formik.touched.lastname && formik.errors.lastname
-                ? "border-red-500 m-0 text-lg rounded-none"
-                : "m-0 text-lg rounded-t-lg"
+                ? "border-red-500 m-0 md:text-lg rounded-none"
+                : "m-0 md:text-lg rounded-t-lg"
             }
             name="lastname"
             value={formik.values.lastname}
@@ -91,8 +91,8 @@ const SignUp = () => {
             label="Email"
             className={
               formik.touched.email && formik.errors.email
-                ? "border-red-500 m-0 text-lg rounded-none"
-                : "m-0 text-lg rounded-t-none"
+                ? "border-red-500 m-0 md:text-lg rounded-none"
+                : "m-0 md:text-lg rounded-t-none"
             }
             type="email"
             name="email"
@@ -108,8 +108,8 @@ const SignUp = () => {
             label="Password"
             className={
               formik.touched.password && formik.errors.password
-                ? "border-red-500 m-0 text-lg rounded-b-lg"
-                : "m-0 text-lg rounded-b-lg"
+                ? "border-red-500 m-0 md:text-lg rounded-b-lg"
+                : "m-0 md:text-lg rounded-b-lg"
             }
             type="password"
             name="password"
@@ -124,7 +124,7 @@ const SignUp = () => {
             Register
           </button>
         </form>
-        <div className="p-3 my-3 text-lg font-semibold text-center">
+        <div className="p-3 my-3 text-sm font-semibold text-center md:text-lg">
           <span>Have an account?</span>
           <span className="ml-2 text-orange-500 hover:text-orange-700">
             <Link to="/login">Sign in now</Link>

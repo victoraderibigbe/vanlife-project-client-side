@@ -21,7 +21,7 @@ const Host = () => {
     <>
       <div className="p-5 bg-orange-100">
         <div>
-          <h2>Welcome</h2>
+          <h3>Welcome</h3>
         </div>
         <div className="flex items-center justify-between my-3">
           <div className="basis-3/4">
@@ -33,14 +33,14 @@ const Host = () => {
           </div>
         </div>
         <div>
-          <h1>$2,260</h1>
+          <h2>$2,260</h2>
         </div>
       </div>
       <div className="flex items-center justify-between p-5 bg-orange-200">
         <div className="flex items-center justify-between">
-          <span className="mr-3 text-lg font-bold">Review score</span>
-          <span className="text-lg font-bold">5.0</span>
-          <span className="text-lg font-semibold opacity-60">/5</span>
+          <span className="mr-3 font-bold">Review score</span>
+          <span className="font-bold ">5.0</span>
+          <span className="font-semibold opacity-60">/5</span>
         </div>
         <div className="text-end">
           <span>Details</span>
@@ -51,7 +51,7 @@ const Host = () => {
           <div className="basis-3/4">
             <h4>Your listed vans</h4>
           </div>
-          <div className="basis-1/4 text-end">
+          <div className="text-sm basis-1/4 text-end">
             <Link to="/host/vans">View all</Link>
           </div>
         </div>

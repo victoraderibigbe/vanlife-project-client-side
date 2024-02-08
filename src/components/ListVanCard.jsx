@@ -9,10 +9,10 @@ const ListVanCard = ({ url, name, price, action }) => {
         />
       </div>
       <div className="basis-2/4">
-        <h4>{name}</h4>
+        <h5 className="font-semibold">{name}</h5>
         <h5 className="text-gray-500">{`${price}/day`}</h5>
       </div>
-      <div className="basis-1/4 text-end">{action}</div>
+      <div className="text-sm basis-1/4 text-end">{action}</div>
     </div>
   );
 };

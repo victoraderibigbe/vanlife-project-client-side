@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import backgroundImg from "../assets/images/image-53.png";
 const Home = () => {
   return (
     <>
-      <div className="h-screen relative">
+      <div className="relative h-screen">
         <div
           className="absolute inset-0 bg-center bg-cover"
           style={{
@@ -19,7 +20,9 @@ const Home = () => {
               Add adventure to your life by joining the #client movement. Rent
               the perfect van to make your perfect road trip.
             </p>
-            <button className="btn bg-orange-500 mt-16 w-full">Find your van</button>
+            <button className="w-full mt-16 bg-orange-500 btn">
+              <Link to="/vans">Find your van</Link>
+            </button>
           </div>
         </div>
       </div>

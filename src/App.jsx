@@ -55,6 +55,8 @@ function App() {
           <Route path="/host/vans" element={<HostVans />} />
           <Route path="/host/reviews" element={<HostReviews />} />
           <Route path="/host/income" element={<HostIncome />} />
+          
+          {/* HostVans sub-pages routes */}
           <Route element={<HostSubLayout />}>
             <Route path="/host/vans/:id" element={<DisplayHostVan />} />
             <Route path="/host/vans/:id/pricing" element={<HostVanPricing />} />

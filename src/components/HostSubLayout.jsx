@@ -25,7 +25,7 @@ const HostSubLayout = () => {
         <div className="p-5 bg-white">
           <div>
             <Link
-              to="/vans"
+              to="/host/vans"
               className="text-sm font-medium underline md:text-xl"
             >
               Back to all vans

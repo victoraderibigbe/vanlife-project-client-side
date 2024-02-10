@@ -51,7 +51,10 @@ const HostSubLayout = () => {
               </div>
               <SubHeader
                 navlinks={[
-                  { title: "Details", path: `/host/vans/${id}` },
+                  {
+                    title: "Details",
+                    path: `/host/vans/${id}`,
+                  },
                   { title: "Pricing", path: `/host/vans/${id}/pricing` },
                   { title: "Photos", path: `/host/vans/${id}/photos` },
                 ]}

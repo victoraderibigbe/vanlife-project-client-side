@@ -16,7 +16,7 @@ const HostLayout = () => {
         />
         <SubHeader
           navlinks={[
-            { title: "Dashboard", path: "/host/." },
+            { title: "Dashboard", path: "/host/"},
             { title: "Income", path: "/host/income" },
             { title: "Vans", path: "/host/vans" },
             { title: "Reviews", path: "/host/reviews" },

@@ -1,8 +1,9 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
-const SubHeader = ({ navlinks}) => {
-  
+const SubHeader = ({ navlinks }) => {
+  const location = useLocation();
+
   return (
     <nav className="z-50 flex flex-row items-center justify-between px-1 py-0 mb-4 md:py-10 md:px-32">
       <div className="basis-3/4">
@@ -10,13 +11,12 @@ const SubHeader = ({ navlinks}) => {
           {navlinks.map((navlink, index) => (
             <li key={index}>
               <NavLink
-                className={({ isActive }) =>
-                  isActive
+                className={
+                  location.pathname.startsWith(navlink.path)
                     ? "text-black underline font-bold text-sm md:text-xl"
                     : "text-sm md:text-xl text-gray-500"
                 }
                 to={navlink.path}
-                end
               >
                 {navlink.title}
               </NavLink>

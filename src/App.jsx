@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 // Page Layout
@@ -52,7 +52,8 @@ function App() {
         {/* HostVans pages routes */}
         <Route element={<HostLayout />}>
           <Route path="/host" element={<Host />} />
-          <Route path="/host/vans" element={<HostVans />} />
+          <Route path="/host/dashboard" element={<Navigate to="/host" />} />
+          <Route path="/host/vans" element={<HostVans />}/>
           <Route path="/host/reviews" element={<HostReviews />} />
           <Route path="/host/income" element={<HostIncome />} />
           

@@ -9,6 +9,8 @@ export default {
     extend: {
       height: {
         half: "50vh",
+        "50v": "50vh",
+        "80v": "80vh",
       },
     },
   },

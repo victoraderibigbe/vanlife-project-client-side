@@ -3,9 +3,11 @@ import SubHeader from "./SubHeader";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import DisplayHostVanTitle from "./DisplayHostVanTitle";
+import { Spinner } from "flowbite-react";
 
 const HostSubLayout = () => {
   const [van, setVan] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
   const url = `https://vanlife-api-82gp.onrender.com/api/host/vans/${id}`;
 
@@ -15,6 +17,7 @@ const HostSubLayout = () => {
       .then((res) => {
         console.log(res.data);
         setVan(res.data);
+        setIsLoading(false);
       })
       .catch((err) => console.log("Could not fetch", err));
   }, []);
@@ -31,12 +34,21 @@ const HostSubLayout = () => {
               Back to all vans
             </Link>
           </div>
-          <DisplayHostVanTitle
-            vanName={van.name}
-            imageUrl={van.imageUrl}
-            type={van.type}
-            price={van.price}
-          />
+
+          {isLoading ? (
+            <div className="w-full text-center h-80v pt-60">
+              <Spinner size="xl" />
+            </div>
+          ) : (
+            <div>
+              <DisplayHostVanTitle
+                vanName={van.name}
+                imageUrl={van.imageUrl}
+                type={van.type}
+                price={van.price}
+              />
+            </div>
+          )}
           <SubHeader
             navlinks={[
               { title: "Details", path: `/host/vans/${id}` },

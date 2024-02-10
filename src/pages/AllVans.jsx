@@ -1,20 +1,24 @@
 import VanCard from "../components/VanCard";
 import axios from "axios";
+import { Spinner } from "flowbite-react";
 import { useEffect, useState } from "react";
 
 const AllVans = () => {
   const [vans, setVans] = useState([]);
-  let URL = "https://vanlife-api-82gp.onrender.com/api/vans"
-  
+  const [isLoading, setIsLoading] = useState(true);
+  const URL = "https://vanlife-api-82gp.onrender.com/api/vans";
+
   useEffect(() => {
-    axios.get(URL)
-    .then((res) => {
-      console.log(res.data);
-      setVans(res.data)
-    })
-    .catch(err => console.log(err))
-  }, [])
-  
+    axios
+      .get(URL)
+      .then((res) => {
+        console.log(res.data);
+        setVans(res.data);
+        setIsLoading(false);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <div className="p-3 md:p-5">
       <h2>Explore our van options</h2>
@@ -28,23 +32,26 @@ const AllVans = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-4 gap-2 md:gap-5">
-        {
-          vans.map((data) => (
-          <div key={data.id} className="col-span-2 md:col-span-1">
-            <VanCard
-              cardImg={data.imageUrl}
-              altText={data.name}
-              cardTitle={data.name}
-              price={data.price}
-              type={data.type}
-              route={`/vans/${data.id}`}
-            />
-          </div>
-            
-          ))
-        }
-      </div>
+      {isLoading ? (
+        <div className="w-full text-center h-80v pt-60">
+          <Spinner size="xl" />
+        </div>
+      ) : (
+        <div className="grid grid-cols-4 gap-2 md:gap-5">
+          {vans.map((data) => (
+            <div key={data.id} className="col-span-2 md:col-span-1">
+              <VanCard
+                cardImg={data.imageUrl}
+                altText={data.name}
+                cardTitle={data.name}
+                price={data.price}
+                type={data.type}
+                route={`/vans/${data.id}`}
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

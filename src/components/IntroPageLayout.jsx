@@ -7,16 +7,18 @@ import Header from "./Header";
 const IntroPageLayout = () => {
   return (
     <>
-      <Header
-        navlinks={[
-          { title: "Host", path: "/host" },
-          { title: "About", path: "/about" },
-          { title: "Vans", path: "/vans" },
-          { title: <AccountCircleOutlinedIcon />, path: "/user" },
-        ]}
-      />
-      <Outlet />
-      <Footer absolute={true} />
+      <div className="bg-body">
+        <Header
+          navlinks={[
+            { title: "Host", path: "/host" },
+            { title: "About", path: "/about" },
+            { title: "Vans", path: "/vans" },
+            { title: <AccountCircleOutlinedIcon />, path: "/user" },
+          ]}
+        />
+        <Outlet />
+        <Footer position={"abs"} />
+      </div>
     </>
   );
 };

@@ -5,7 +5,7 @@ import incomeData from "../data/incomeData.json";
 const HostIncome = () => {
   return (
     <>
-      <div className="p-5 bg-orange-50">
+      <div className="relative p-5 min-h-80v bg-orange-50">
         <div className="py-2">
           <h3>Income</h3>
         </div>

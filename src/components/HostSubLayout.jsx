@@ -24,7 +24,7 @@ const HostSubLayout = () => {
 
   return (
     <>
-      <div className="w-full px-2 mx-auto md:p-10 md:w-2/4">
+      <div className="relative w-full px-2 mx-auto min-h-80v md:p-10 md:w-2/4">
         <div className="p-5 bg-white">
           <div>
             <Link
@@ -36,27 +36,29 @@ const HostSubLayout = () => {
           </div>
 
           {isLoading ? (
-            <div className="w-full text-center h-80v pt-60">
+            <div className="w-full text-center h-30v pt-60">
               <Spinner size="xl" />
             </div>
           ) : (
             <div>
-              <DisplayHostVanTitle
-                vanName={van.name}
-                imageUrl={van.imageUrl}
-                type={van.type}
-                price={van.price}
+              <div>
+                <DisplayHostVanTitle
+                  vanName={van.name}
+                  imageUrl={van.imageUrl}
+                  type={van.type}
+                  price={van.price}
+                />
+              </div>
+              <SubHeader
+                navlinks={[
+                  { title: "Details", path: `/host/vans/${id}` },
+                  { title: "Pricing", path: `/host/vans/${id}/pricing` },
+                  { title: "Photos", path: `/host/vans/${id}/photos` },
+                ]}
               />
+              <Outlet />
             </div>
           )}
-          <SubHeader
-            navlinks={[
-              { title: "Details", path: `/host/vans/${id}` },
-              { title: "Pricing", path: `/host/vans/${id}/pricing` },
-              { title: "Photos", path: `/host/vans/${id}/photos` },
-            ]}
-          />
-          <Outlet />
         </div>
       </div>
     </>

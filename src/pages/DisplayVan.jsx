@@ -32,7 +32,7 @@ const DisplayVan = () => {
 
   return (
     <>
-      <div className="w-full p-5 mx-auto md:p-10 md:w-2/4">
+      <div className="relative w-full p-5 mx-auto min-h-80v md:p-10 md:w-2/4">
         <div>
           <Link to="/vans" className="text-sm font-medium underline md:text-xl">
             Back to all vans

@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className="bg-body">
       <Header
         navlinks={[
           { title: "About", path: "/about" },
@@ -12,7 +12,7 @@ const MainLayout = () => {
         ]}
       />
       <Outlet />
-      <Footer absolute={false} />
+      <Footer />
     </div>
   );
 };

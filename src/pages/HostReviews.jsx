@@ -4,7 +4,7 @@ import { Progress } from "flowbite-react";
 const HostReviews = () => {
   return (
     <>
-      <div className="px-5">
+      <div className="relative px-5 min-h-80v">
         <div className="flex items-center pb-2">
           <div className="mr-5">
             <h3>Your reviews</h3>

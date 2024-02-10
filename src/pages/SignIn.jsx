@@ -47,7 +47,7 @@ const SignIn = () => {
   });
 
   return (
-    <div className="w-full p-2 mx-auto my-5 md:my-10 md:w-2/5">
+    <div className="relative w-full p-2 mx-auto my-5 min-h-80v md:my-10 md:w-2/5">
       <div className="px-5 rounded-lg shadow-lg">
         <h3 className="mb-2">Sign in to your account</h3>
         <form action="" onSubmit={formik.handleSubmit}>

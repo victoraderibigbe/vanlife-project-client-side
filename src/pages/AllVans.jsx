@@ -20,7 +20,7 @@ const AllVans = () => {
   }, []);
 
   return (
-    <div className="p-3 md:p-5">
+    <div className="relative min-h-screen p-3 md:p-5">
       <h2>Explore our van options</h2>
 
       <div className="flex items-center justify-between mb-5 md:mb-10">
@@ -33,7 +33,7 @@ const AllVans = () => {
       </div>
 
       {isLoading ? (
-        <div className="w-full text-center h-80v pt-60">
+        <div className="w-full text-center pt-60">
           <Spinner size="xl" />
         </div>
       ) : (

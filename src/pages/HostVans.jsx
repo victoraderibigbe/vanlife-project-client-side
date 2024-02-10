@@ -21,13 +21,13 @@ const HostVans = () => {
 
   return (
     <>
-      <div className="p-5 pb-40 bg-orange-50">
+      <div className="relative p-5 pb-40 min-h-80v bg-orange-50">
         <div className="p-5">
           <h3>Your listed vans</h3>
         </div>
 
         {isLoading ? (
-          <div className="w-full text-center h-80v pt-60">
+          <div className="w-full text-center h-30v pt-60">
             <Spinner size="xl" />
           </div>
         ) : (

@@ -3,7 +3,7 @@ import backgroundImg from "../assets/images/image-53.png";
 const Home = () => {
   return (
     <>
-      <div className="relative h-screen">
+      <div className="relative h-screen min-h-screen">
         <div
           className="absolute inset-0 bg-center bg-cover"
           style={{

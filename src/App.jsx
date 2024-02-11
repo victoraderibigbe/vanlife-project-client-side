@@ -32,7 +32,6 @@ import Settings from "./pages/Settings";
 // Toast
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Logout from "./components/Logout";
 
 function App() {
   return (
@@ -61,7 +60,6 @@ function App() {
           <Route path="/host/income" element={<HostIncome />} />
           <Route path="/host/user/profile" element={<Profile />} />
           <Route path="/host/user/settings" element={<Settings />} />
-          {/* <Route path="/host/user/" element={<Logout />} /> */}
           
           {/* HostVans sub-pages routes */}
           <Route element={<HostSubLayout />}>

@@ -1,9 +1,28 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
 import SubHeader from "./SubHeader";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import { useEffect } from "react";
 
 const HostLayout = () => {
+  const navigate = useNavigate();
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  // Redirect user to login page if not signed in
+  useEffect(() => {
+    console.log(isLoggedIn);
+    if (isLoggedIn === 'false') {
+      navigate("/login")
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("user_id");
+    navigate("/login");
+  };
+
   return (
     <>
       <div className="bg-body">
@@ -16,11 +35,19 @@ const HostLayout = () => {
         />
         <SubHeader
           navlinks={[
-            { title: "Dashboard", path: "/host/"},
+            { title: "Dashboard", path: "/host/" },
             { title: "Income", path: "/host/income" },
             { title: "Vans", path: "/host/vans" },
             { title: "Reviews", path: "/host/reviews" },
+            [
+              <AccountCircleOutlinedIcon />,
+              [
+                { title: "Profile", path: "/host/user/profile" },
+                { title: "Settings", path: "/host/user/settings" },
+              ],
+            ],
           ]}
+          onLogout={handleLogout}
         />
         <Outlet />
         <Footer />

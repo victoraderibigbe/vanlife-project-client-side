@@ -8,6 +8,7 @@ const DisplayVan = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
   const URL = `https://vanlife-api-82gp.onrender.com/api/vans/${id}`;
+  const isLoggedIn = localStorage.getItem("isLoggedIn"); // Get user status
 
   useEffect(() => {
     axios
@@ -70,9 +71,11 @@ const DisplayVan = () => {
               <p>{data.description}</p>
             </div>
             <div>
-              <button className="w-full py-3 text-lg font-semibold text-white transition rounded-lg md:text-xl bg-amber-500 hover:bg-amber-600">
-                <Link to="/register">Rent this van</Link>
-              </button>
+              <Link to={isLoggedIn === 'true' ? '/host' : '/register'}>
+                <button className="w-full py-3 text-lg font-semibold text-white transition rounded-lg md:text-xl bg-amber-500 hover:bg-amber-600">
+                  Rent this van
+                </button>
+              </Link>
             </div>
           </div>
         )}

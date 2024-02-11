@@ -4,10 +4,18 @@ import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
 
 const SignIn = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Set initial state of user login
   const navigate = useNavigate();
   const url = "https://vanlife-api-82gp.onrender.com/user/login";
+  // const url = "http://localhost:3200/user/login";
+
+  // Update isLoggedIn in localStorage when its value changes
+  useEffect(() => {
+    localStorage.setItem("isLoggedIn", isLoggedIn);
+  }, [isLoggedIn]);
 
   const formik = useFormik({
     initialValues: {
@@ -23,11 +31,12 @@ const SignIn = () => {
           if (res.data.status) {
             toast.success(res.data.message);
             resetForm({ values: "" });
+            setIsLoggedIn(true); // Update isLoggedIn to true
+            localStorage.setItem("user_id", res.data.user_id);
             setTimeout(() => {
               navigate("/host");
             }, 2500);
-          }
-          else {
+          } else {
             toast.error(res.data.message);
             resetForm({ values: "" });
           }

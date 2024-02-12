@@ -1,12 +1,11 @@
 import { Dropdown } from "flowbite-react";
 import React from "react";
 import { NavLink } from "react-router-dom";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 
 const SubHeader = ({ navlinks, onLogout }) => {
   return (
-    <nav className="z-50 flex flex-row items-center justify-between px-1 py-0 mb-4 cursor-pointer md:py-10 md:px-32">
-      <div className="basis-3/4">
+    <nav className="z-50 px-1 py-0 mb-4 cursor-pointer md:py-10 md:px-80">
+      <div className="mx-auto">
         <ul className="flex justify-between px-5 mt-4 font-medium md:p-0">
           {navlinks.map((navlink, index) => (
             <li key={index}>
@@ -16,7 +15,7 @@ const SubHeader = ({ navlinks, onLogout }) => {
                   dismissOnClick={false}
                   renderTrigger={() => (
                     <span className="text-sm text-gray-500 md:text-xl">
-                      <AccountCircleOutlinedIcon />
+                      Account
                     </span>
                   )}
                 >

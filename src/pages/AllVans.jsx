@@ -20,10 +20,10 @@ const AllVans = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen p-3 md:p-5">
-      <h2>Explore our van options</h2>
+    <div className="relative min-h-screen p-3 md:px-60">
+      <h2 className="md:text-center md:mb-10">Explore our van options</h2>
 
-      <div className="flex items-center justify-between mb-5 md:mb-10">
+      <div className="flex items-center justify-between mb-5 md:mb-10 md:px-96">
         <button className="filter-btn">Simple</button>
         <button className="filter-btn">Luxury</button>
         <button className="filter-btn">Rugged</button>
@@ -37,7 +37,7 @@ const AllVans = () => {
           <Spinner size="xl" />
         </div>
       ) : (
-        <div className="grid grid-cols-4 gap-2 md:gap-5">
+        <div className="grid grid-cols-4 gap-2 md:gap-5 md:bg-white md:p-5">
           {vans.map((data) => (
             <div key={data.id} className="col-span-2 md:col-span-1">
               <VanCard

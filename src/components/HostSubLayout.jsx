@@ -24,8 +24,8 @@ const HostSubLayout = () => {
 
   return (
     <>
-      <div className="relative w-full px-2 mx-auto min-h-80v md:p-10 md:w-2/4">
-        <div className="p-5 bg-white">
+      <div className="relative w-full px-2 mx-auto min-h-80v md:p-5 md:w-2/4">
+        <div className="p-5 bg-white md:rounded-lg">
           <div>
             <Link
               to="/host/vans"

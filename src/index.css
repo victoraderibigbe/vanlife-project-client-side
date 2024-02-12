@@ -12,11 +12,15 @@
     }
 
     h3 {
-        @apply text-xl md:text-2xl font-bold tracking-tight;
+        @apply text-xl md:text-3xl font-bold tracking-tight;
     }
 
     h4 {
         @apply text-sm md:text-xl font-bold tracking-tight;
+    }
+
+    h5 {
+        @apply md:text-xl;
     }
 
     p {
@@ -24,7 +28,7 @@
     }
 
     span {
-        @apply text-sm;
+        @apply text-sm md:text-lg;
     }
 
     .btn {

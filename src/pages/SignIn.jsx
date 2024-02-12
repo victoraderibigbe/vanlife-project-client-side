@@ -10,7 +10,6 @@ const SignIn = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Set initial state of user login
   const navigate = useNavigate();
   const url = "https://vanlife-api-82gp.onrender.com/user/login";
-  // const url = "http://localhost:3200/user/login";
 
   // Update isLoggedIn in localStorage when its value changes
   useEffect(() => {
@@ -57,7 +56,7 @@ const SignIn = () => {
 
   return (
     <div className="relative w-full p-2 mx-auto my-5 min-h-80v md:my-10 md:w-2/5">
-      <div className="px-5 rounded-lg shadow-lg">
+      <div className="px-5 rounded-lg shadow-lg md:p-10">
         <h3 className="mb-2">Sign in to your account</h3>
         <form action="" onSubmit={formik.handleSubmit}>
           <FloatingLabel

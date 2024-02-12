@@ -21,8 +21,8 @@ const HostVans = () => {
 
   return (
     <>
-      <div className="relative p-5 pb-40 min-h-80v bg-orange-50">
-        <div className="p-5">
+      <div className="relative p-5 pb-40 md:px-60 min-h-80v bg-orange-50">
+        <div className="p-5 md:text-center">
           <h3>Your listed vans</h3>
         </div>
 
@@ -31,7 +31,7 @@ const HostVans = () => {
             <Spinner size="xl" />
           </div>
         ) : (
-          <div>
+          <div className="md:grid md:grid-cols-3 md:gap-5">
             {hostVans.map((van) => (
               <div key={van.id}>
                 <ListVanCard

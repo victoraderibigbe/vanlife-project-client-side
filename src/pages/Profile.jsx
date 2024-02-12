@@ -67,7 +67,7 @@ const Profile = () => {
                     <input
                       type="text"
                       placeholder={firstName}
-                      className="w-full text-sm bg-gray-100 border-none focus:ring-0"
+                      className="w-full text-sm bg-gray-100 border-none focus:ring-0 md:h-16"
                     />
                   </div>
                   <div className="basis-1/6 text-end">
@@ -102,7 +102,7 @@ const Profile = () => {
                     <input
                       type="text"
                       placeholder={lastName}
-                      className="w-full text-sm bg-gray-100 border-none focus:ring-0"
+                      className="w-full text-sm bg-gray-100 border-none focus:ring-0 md:h-16"
                     />
                   </div>
                   <div className="basis-1/6 text-end">
@@ -137,7 +137,7 @@ const Profile = () => {
                     <input
                       type="text"
                       placeholder={email}
-                      className="w-full text-sm bg-gray-100 border-none focus:ring-0"
+                      className="w-full text-sm bg-gray-100 border-none focus:ring-0 md:h-16"
                     />
                   </div>
                   <div className="basis-1/6 text-end">

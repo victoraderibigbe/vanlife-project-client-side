@@ -22,14 +22,14 @@ const Host = () => {
 
   return (
     <>
-      <div className="relative min-h-80v">
+      <div className="relative min-h-80v md:px-60">
         {isLoading ? (
           <div className="w-full text-center h-80v pt-60">
             <Spinner size="xl" />
           </div>
         ) : (
           <div>
-            <div className="p-5 bg-[#ffdae0]">
+            <div className="p-5 bg-[#ffdae0] md:rounded-t-lg">
               <div>
                 <h3>Welcome</h3>
               </div>
@@ -46,7 +46,7 @@ const Host = () => {
                 <h2>$2,260</h2>
               </div>
             </div>
-            <div className="flex items-center justify-between p-5 bg-[#ffddb2]">
+            <div className="flex items-center justify-between p-5 bg-[#ffddb2] md:rounded-b-lg">
               <div className="flex items-center justify-between">
                 <span className="mr-3 font-bold">Review score</span>
                 <span className="font-bold ">5.0</span>
@@ -56,16 +56,16 @@ const Host = () => {
                 <span>Details</span>
               </div>
             </div>
-            <div className="p-5">
+            <div className="p-5 md:p-0 md:py-5">
               <div className="flex items-center-justify-between">
                 <div className="basis-3/4">
                   <h4>Your listed vans</h4>
                 </div>
-                <div className="text-sm basis-1/4 text-end">
+                <div className="text-sm md:text-lg basis-1/4 text-end">
                   <Link to="/host/vans">View all</Link>
                 </div>
               </div>
-              <div>
+              <div className="md:grid md:grid-cols-3 md:gap-5">
                 {hostVans.map((van) => (
                   <div key={van.id}>
                     <ListVanCard

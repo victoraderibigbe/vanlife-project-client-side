@@ -14,7 +14,7 @@ const Error404 = () => {
             { title: "Vans", path: "/vans" },
           ]}
         />
-        <div className="p-10">
+        <div className="p-10 mx-auto md:w-2/5 md:text-center">
           <h2>Sorry, the page you were looking for was not found.</h2>
           <button className="w-full h-12 mt-16 text-white bg-black rounded-lg hover:opacity-80">
             <Link to="/">Return to home</Link>

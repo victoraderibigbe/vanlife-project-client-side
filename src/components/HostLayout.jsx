@@ -2,7 +2,6 @@ import { Outlet, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
 import SubHeader from "./SubHeader";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { useEffect } from "react";
 
 const HostLayout = () => {
@@ -40,7 +39,7 @@ const HostLayout = () => {
             { title: "Vans", path: "/host/vans" },
             { title: "Reviews", path: "/host/reviews" },
             [
-              <AccountCircleOutlinedIcon />,
+              "Account",
               [
                 { title: "Profile", path: "/host/user/profile" },
                 { title: "Settings", path: "/host/user/settings" },

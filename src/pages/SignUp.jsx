@@ -51,7 +51,7 @@ const SignUp = () => {
 
   return (
     <div className="relative w-full p-2 mx-auto my-5 min-h-80v md:w-2/5">
-      <div className="px-5 rounded-lg shadow-lg">
+      <div className="px-5 rounded-lg shadow-lg md:p-10">
         <h3 className="mb-2">Sign up an account</h3>
         <form action="" onSubmit={formik.handleSubmit}>
           <FloatingLabel

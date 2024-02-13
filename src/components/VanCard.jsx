@@ -1,4 +1,3 @@
-import { Card } from "flowbite-react";
 import { Link } from "react-router-dom";
 
 const VanCard = ({ cardImg, altText, cardTitle, price, type, route }) => {

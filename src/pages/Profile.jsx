@@ -1,10 +1,9 @@
 import { Edit, Send } from "@mui/icons-material";
-import axios from "axios";
 import { Spinner } from "flowbite-react";
 import { useEffect, useState } from "react";
 
 const Profile = () => {
-  // States to store each value from API
+  // States to store each value localStorage
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -16,20 +15,17 @@ const Profile = () => {
 
   const [isLoading, setIsLoading] = useState(true);
 
-  // API endpoint
-  const url = "https://vanlife-api-82gp.onrender.com/user/profile";
+  // Function to get user information
+  const getUserInfo = () => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    setFirstName(user.firstname);
+    setLastName(user.lastname);
+    setEmail(user.email);
+  };
 
   useEffect(() => {
-    axios
-      .get(url)
-      .then((user) => {
-        console.log(user);
-        setFirstName(user.data.firstname);
-        setLastName(user.data.lastname);
-        setEmail(user.data.email);
-        setIsLoading(false);
-      })
-      .catch((err) => console.log(err));
+    getUserInfo();
+    setIsLoading(false);
   }, []);
 
   return (
@@ -41,7 +37,9 @@ const Profile = () => {
       ) : (
         <div className="relative w-full p-3 mx-auto md:w-2/5 min-h-80v">
           <div className="w-full p-5 bg-white rounded-lg shadow-lg">
-            <h3 className="tracking-wide text-center text-blue-700 underline">Profile</h3>
+            <h3 className="tracking-wide text-center text-blue-700 underline">
+              Profile
+            </h3>
             <div>
               <div className="flex justify-between my-5 item-center">
                 <div>

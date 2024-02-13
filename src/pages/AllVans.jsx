@@ -24,9 +24,9 @@ const AllVans = () => {
       <h2 className="md:text-center md:mb-10">Explore our van options</h2>
 
       <div className="flex items-center justify-between mb-5 md:mb-10 md:px-96">
-        <button className="filter-btn">Simple</button>
-        <button className="filter-btn">Luxury</button>
-        <button className="filter-btn">Rugged</button>
+        <button className="transition rounded-lg filter-btn hover:bg-orange-500 hover:text-white">Simple</button>
+        <button className="transition rounded-lg filter-btn hover:bg-black hover:text-white">Luxury</button>
+        <button className="transition rounded-lg filter-btn hover:bg-green-500 hover:text-white">Rugged</button>
         <button className="text-sm font-semibold underline text-stone-500">
           Clear Filters
         </button>

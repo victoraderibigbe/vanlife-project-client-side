@@ -18,7 +18,7 @@ const HostLayout = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("user_id");
+    localStorage.removeItem("user");
     navigate("/login");
   };
 

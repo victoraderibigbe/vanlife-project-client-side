@@ -9,7 +9,8 @@ import { useEffect, useState } from "react";
 const SignIn = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Set initial state of user login
   const navigate = useNavigate();
-  const url = "https://vanlife-api-82gp.onrender.com/user/login";
+  // const url = "https://vanlife-api-82gp.onrender.com/user/login";
+  const url = "http://localhost:3200/user/login";
 
   // Update isLoggedIn in localStorage when its value changes
   useEffect(() => {
@@ -27,21 +28,21 @@ const SignIn = () => {
         .post(url, values)
         .then((res) => {
           console.log(res);
-          if (res.data.status) {
+          if (res.status === 200) {
             toast.success(res.data.message);
             resetForm({ values: "" });
             setIsLoggedIn(true); // Update isLoggedIn to true
-            localStorage.setItem("user_id", res.data.user_id);
+            localStorage.setItem("user", JSON.stringify(res.data.user));
             setTimeout(() => {
               navigate("/host");
             }, 2500);
-          } else {
-            toast.error(res.data.message);
-            resetForm({ values: "" });
           }
         })
         .catch((err) => {
           console.log(err);
+          toast.error(err.response.data.message);
+          console.log("Login failed");
+          resetForm({ values: "" });
         });
     },
     validationSchema: Yup.object({

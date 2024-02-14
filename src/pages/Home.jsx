@@ -14,16 +14,16 @@ const Home = () => {
         <div className="absolute inset-0 bg-black opacity-30"></div>
         <div className="absolute inset-0 flex items-center justify-center px-5 text-white md:px-0">
           <div className="text-center">
-            <h1>
-              You got the travel plans, we got the travel vans.
-            </h1>
+            <h1>You got the travel plans, we got the travel vans.</h1>
             <p>
               Add adventure to your life by joining the #client movement. Rent
               the perfect van to make your perfect road trip.
             </p>
-            <button className="w-full mt-16 bg-orange-500 btn">
-              <Link to="/vans">Find your van</Link>
-            </button>
+            <Link to="/vans">
+              <button className="w-full mt-16 bg-orange-500 btn">
+                Find your van
+              </button>
+            </Link>
           </div>
         </div>
       </div>

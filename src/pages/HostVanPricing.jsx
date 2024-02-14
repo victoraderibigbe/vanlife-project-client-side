@@ -8,7 +8,7 @@ const HostVanPricing = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
   console.log(id);
-  const url = `https://vanlife-api-82gp.onrender.com/api/host/vans/${id}`;
+  const url = `${import.meta.env.VITE_DISPLAY_HOST_VAN_URL}/${id}`;
 
   useEffect(() => {
     axios

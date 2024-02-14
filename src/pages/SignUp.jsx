@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 const SignUp = () => {
   const navigate = useNavigate();
-  const url = "https://vanlife-api-82gp.onrender.com/user/register";
+  const url = import.meta.env.VITE_REGISTER_USER_URL;;
 
   const formik = useFormik({
     initialValues: {

@@ -7,8 +7,9 @@ const DisplayVan = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
-  const URL = `https://vanlife-api-82gp.onrender.com/api/vans/${id}`;
   const isLoggedIn = localStorage.getItem("isLoggedIn"); // Get user status
+  
+  const URL = `${import.meta.env.VITE_DISPLAY_VAN_URL}/${id}`; // API endpoint
 
   useEffect(() => {
     axios

@@ -6,7 +6,7 @@ import { Spinner } from "flowbite-react";
 const HostVans = () => {
   const [hostVans, setHostVans] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const url = "https://vanlife-api-82gp.onrender.com/api/host/vans";
+  const url = import.meta.env.VITE_HOSTVANS_URL; // API endpoint
 
   useEffect(() => {
     axios

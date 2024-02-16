@@ -7,11 +7,17 @@ const Profile = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [oldPassword, setOldPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmNewPassword, setConfirmNewPassword] = useState("");
+  const [allData, setAllData] = useState([]);
 
   // Toggle each of the inputs
   const [toggleFirstName, setToggleFirstName] = useState(false);
   const [toggleLastName, setToggleLastName] = useState(false);
   const [toggleEmail, setToggleEmail] = useState(false);
+  const [togglePassword, setTogglePassword] = useState(false);
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -21,12 +27,30 @@ const Profile = () => {
     setFirstName(user.firstname);
     setLastName(user.lastname);
     setEmail(user.email);
+    setPassword(user.password);
   };
 
   useEffect(() => {
     getUserInfo();
     setIsLoading(false);
   }, []);
+
+  // Function to update password
+  const updatePassword = (e) => {
+    if (oldPassword === password) {
+      if (newPassword === confirmNewPassword) {
+        console.log("Passwords match");
+        const newUserDetails = { firstName, lastName, email, newPassword };
+        // console.log(newUserDetails);
+        setAllData(...allData, newUserDetails);
+        console.log(allData);
+      } else {
+        console.log("Passwords do not match");
+      }
+    } else {
+      console.log("Incorrect password");
+    }
+  };
 
   return (
     <>
@@ -141,6 +165,43 @@ const Profile = () => {
                   <div className="basis-1/6 text-end">
                     <Send className="text-blue-800 transition cursor-pointer hover:text-yellow-400" />
                   </div>
+                </div>
+              )}
+            </div>
+
+            <div>
+              <button
+                className="w-full h-12 bg-blue-800 text-white font-semibold rounded-lg hover:opacity-80 transition"
+                onClick={() => setTogglePassword(!togglePassword)}
+              >
+                Change Password
+              </button>
+              {togglePassword && (
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Old password"
+                    className="w-full text-sm bg-gray-100 border-none focus:ring-0 md:h-16 rounded-lg my-2"
+                    onChange={(e) => setOldPassword(e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    placeholder="New password"
+                    className="w-full text-sm bg-gray-100 border-none focus:ring-0 md:h-16 rounded-lg my-2"
+                    onChange={(e) => setNewPassword(e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Confirm new password"
+                    className="w-full text-sm bg-gray-100 border-none focus:ring-0 md:h-16 rounded-lg my-2"
+                    onChange={(e) => setConfirmNewPassword(e.target.value)}
+                  />
+                  <button
+                    className="w-full h-12 bg-yellow-400 text-white font-semibold rounded-lg hover:opacity-80 transition"
+                    onClick={updatePassword}
+                  >
+                    Update
+                  </button>
                 </div>
               )}
             </div>

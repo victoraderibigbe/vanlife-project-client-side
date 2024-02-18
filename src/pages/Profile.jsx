@@ -1,17 +1,23 @@
 import { Edit, Send } from "@mui/icons-material";
+import axios from "axios";
 import { Spinner } from "flowbite-react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Profile = () => {
+  const url = import.meta.env.VITE_REGISTER_UPDATE_URL;
+
   // States to store each value localStorage
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [userId, setUserId] = useState("");
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
-  const [allData, setAllData] = useState([]);
+  const [allData, setAllData] = useState({});
 
   // Toggle each of the inputs
   const [toggleFirstName, setToggleFirstName] = useState(false);
@@ -21,6 +27,8 @@ const Profile = () => {
 
   const [isLoading, setIsLoading] = useState(true);
 
+  const navigate = useNavigate();
+
   // Function to get user information
   const getUserInfo = () => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -28,6 +36,7 @@ const Profile = () => {
     setLastName(user.lastname);
     setEmail(user.email);
     setPassword(user.password);
+    setUserId(user._id);
   };
 
   useEffect(() => {
@@ -36,19 +45,35 @@ const Profile = () => {
   }, []);
 
   // Function to update password
-  const updatePassword = (e) => {
+  const updatePassword = () => {
     if (oldPassword === password) {
       if (newPassword === confirmNewPassword) {
-        console.log("Passwords match");
-        const newUserDetails = { firstName, lastName, email, newPassword };
-        // console.log(newUserDetails);
-        setAllData(...allData, newUserDetails);
-        console.log(allData);
+        const newUserDetails = { userId, newPassword };
+        setAllData(newUserDetails);
+        axios
+          .post(url, allData)
+          .then((res) => {
+            console.log(res);
+            if (res.status === 200) {
+              toast.success(res.data.message);
+              setTogglePassword(false);
+              setTimeout(() => {
+                navigate("/login");
+              }, 2500);
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            toast.error(err.response.data.message);
+            setTogglePassword(false);
+          });
       } else {
-        console.log("Passwords do not match");
+        toast.error("Passwords do not match");
+        setTogglePassword(false);
       }
     } else {
-      console.log("Incorrect password");
+      toast.error("Incorrect password");
+      setTogglePassword(false);
     }
   };
 
@@ -171,7 +196,7 @@ const Profile = () => {
 
             <div>
               <button
-                className="w-full h-12 bg-blue-800 text-white font-semibold rounded-lg hover:opacity-80 transition"
+                className="w-full h-12 font-semibold text-white transition bg-blue-800 rounded-lg hover:opacity-80"
                 onClick={() => setTogglePassword(!togglePassword)}
               >
                 Change Password
@@ -181,23 +206,23 @@ const Profile = () => {
                   <input
                     type="text"
                     placeholder="Old password"
-                    className="w-full text-sm bg-gray-100 border-none focus:ring-0 md:h-16 rounded-lg my-2"
+                    className="w-full my-2 text-sm bg-gray-100 border-none rounded-lg focus:ring-0 md:h-16"
                     onChange={(e) => setOldPassword(e.target.value)}
                   />
                   <input
                     type="text"
                     placeholder="New password"
-                    className="w-full text-sm bg-gray-100 border-none focus:ring-0 md:h-16 rounded-lg my-2"
+                    className="w-full my-2 text-sm bg-gray-100 border-none rounded-lg focus:ring-0 md:h-16"
                     onChange={(e) => setNewPassword(e.target.value)}
                   />
                   <input
                     type="text"
                     placeholder="Confirm new password"
-                    className="w-full text-sm bg-gray-100 border-none focus:ring-0 md:h-16 rounded-lg my-2"
+                    className="w-full my-2 text-sm bg-gray-100 border-none rounded-lg focus:ring-0 md:h-16"
                     onChange={(e) => setConfirmNewPassword(e.target.value)}
                   />
                   <button
-                    className="w-full h-12 bg-yellow-400 text-white font-semibold rounded-lg hover:opacity-80 transition"
+                    className="w-full h-12 font-semibold text-white transition bg-yellow-400 rounded-lg hover:opacity-80"
                     onClick={updatePassword}
                   >
                     Update

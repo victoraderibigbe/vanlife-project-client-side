@@ -7,9 +7,8 @@ const AllVans = () => {
   const [vans, setVans] = useState([]); // State to handle all vans data
   const [isLoading, setIsLoading] = useState(true); // State to handle loading
   const [filteredVans, setFilteredVans] = useState(undefined); // State to handle filtered vans
-
-  // const URL = import.meta.env.VITE_ALL_VANS_URL; // API enpoint
-  const URL = "https://vanlife-api-82gp.onrender.com/api/vans"; // API enpoint
+  
+  const URL = import.meta.env.VITE_ALL_VANS_URL; // API enpoint
 
   useEffect(() => {
     // Get all vans from server

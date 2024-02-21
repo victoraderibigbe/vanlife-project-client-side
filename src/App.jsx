@@ -8,26 +8,30 @@ import IntroPageLayout from "./components/IntroPageLayout";
 import HostSubLayout from "./components/HostSubLayout";
 
 // Main pages
-import Home from "./pages/Home";
-import About from "./pages/About";
-import AllVans from "./pages/AllVans";
-import DisplayVan from "./pages/DisplayVan";
+import Home from "./pages/main/Home";
+import About from "./pages/main/About";
 import Error404 from "./pages/Error404";
 
+// Van pages
+import AllVans from "./pages/van/AllVans";
+import DisplayVan from "./pages/van/DisplayVan";
+
 // Auth pages
-import SignUp from "./pages/SignUp";
-import SignIn from "./pages/SignIn";
+import SignUp from "./pages/auth/SignUp";
+import SignIn from "./pages/auth/SignIn";
 
 // HostVans pages
-import Host from "./pages/Host";
-import HostVans from "./pages/HostVans";
-import HostReviews from "./pages/HostReviews";
-import HostIncome from "./pages/HostIncome";
-import DisplayHostVan from "./pages/DisplayHostVan";
-import HostVanPricing from "./pages/HostVanPricing";
-import HostVanPhotos from "./pages/HostVanPhotos";
-import Profile from "./pages/Profile";
-import Settings from "./pages/Settings";
+import Host from "./pages/host/Host";
+import HostVans from "./pages/host/HostVans";
+import HostReviews from "./pages/host/HostReviews";
+import HostIncome from "./pages/host/HostIncome";
+import DisplayHostVan from "./pages/host/DisplayHostVan";
+import HostVanPricing from "./pages/host/HostVanPricing";
+import HostVanPhotos from "./pages/host/HostVanPhotos";
+
+// User Account pages
+import Profile from "./pages/user/Profile";
+import Settings from "./pages/user/Settings";
 
 // Toast
 import { ToastContainer } from "react-toastify";

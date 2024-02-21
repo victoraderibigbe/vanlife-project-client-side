@@ -1,4 +1,4 @@
-import VanCard from "../components/VanCard";
+import VanCard from "../../components/VanCard";
 import axios from "axios";
 import { Spinner } from "flowbite-react";
 import { useEffect, useState } from "react";

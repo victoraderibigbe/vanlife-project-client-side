@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import ListVanCard from "../components/ListVanCard";
+import ListVanCard from "../../components/ListVanCard";
 import { Spinner } from "flowbite-react";
 
 const HostVans = () => {
